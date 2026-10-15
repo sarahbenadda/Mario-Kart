@@ -18,7 +18,6 @@ class Car:
         self.speed += CAR_ACCELERATION
 
     def brake_or_reverse(self) -> None:
-    """Freine la voiture puis permet de reculer."""
     self.speed = max(
         self.speed - CAR_BRAKE_ACCELERATION,
         -CAR_MAX_REVERSE_SPEED)
