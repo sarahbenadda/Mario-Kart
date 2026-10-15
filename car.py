@@ -15,12 +15,15 @@ class Car:
         self.sprite = self.build_sprite()
 
     def accelerate(self) -> None:
+        """la voiture accelere""" 
         self.speed += CAR_ACCELERATION
 
     def brake_or_reverse(self) -> None:
+        """la voiture freine"
     self.speed = max(
         self.speed - CAR_BRAKE_ACCELERATION,
-        -CAR_MAX_REVERSE_SPEED)
+        -CAR_MAX_REVERSE_SPEED
+        )    
 
     def update_position(self) -> None:
         orientation = math.radians(self.angle)
