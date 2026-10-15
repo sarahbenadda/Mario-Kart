@@ -17,8 +17,14 @@ class Car:
     def accelerate(self) -> None:
         self.speed += CAR_ACCELERATION
 
+
     def update_position(self) -> None:
-        self.y += self.speed
+        orientation = math.radians(self.angle)
+        self.x -= math.sin(orientation) * self.speed
+        self.y -= math.cos(orientation) * self.speed
+        self.speed *= CAR_FRICTION
+        if abs(self.speed) < 0.01:
+            self.speed = 0.0
 
     def build_sprite(self) -> pygame.Surface:
         surf = pygame.Surface((CAR_WIDTH, CAR_HEIGHT), pygame.SRCALPHA)
