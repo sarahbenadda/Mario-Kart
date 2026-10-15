@@ -30,3 +30,10 @@ class Car:
         rotated = pygame.transform.rotate(self.sprite, -self.angle)
         rect = rotated.get_rect(center=(int(self.x), int(self.y)))
         return rotated, rect
+
+def brake_or_reverse(self) -> None:
+    """Freine la voiture puis permet de reculer."""
+    self.speed = max(
+        self.speed - CAR_BRAKE_ACCELERATION,
+        -CAR_MAX_REVERSE_SPEED
+    )
