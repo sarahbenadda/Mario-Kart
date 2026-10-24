@@ -75,8 +75,9 @@ class GameView:
                 sprite = tile.get_sprite(TILE_SIZE)
                 self.screen.blit(
                     sprite, (col_idx * TILE_SIZE, row_idx * TILE_SIZE))
-            if model.car is None:
-                return
+
+        if model.car is None:
+            return
     
-            surf, rect = model.car.get_rotated_sprite()
-            self.screen.blit(surf, rect)
+        surf, rect = model.car.get_rotated_sprite()
+        self.screen.blit(surf, rect)
