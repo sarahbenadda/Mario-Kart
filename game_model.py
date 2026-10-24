@@ -14,7 +14,7 @@ class GameModel:
         self.car: Car | None = None
         
         self.circuit_names = ["Circuit 1", "Circuit 2"]
-        self selected_circuit = 0 
+        self.selected_circuit = 0 
 
     def change_circuit(self,direction : int) -> None: 
         """change le circuit selectinné"""
