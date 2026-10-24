@@ -43,15 +43,34 @@ class GameController:
 
         if state == GameState.MENU:
             self.handle_menu_key(key)
+        elif state == GameState.CIRCUIT_SELECTION:
+            self.handle_selection_key(key)
+        elif state == GameState.RACING:
+            if key == pygame.K_ESCAPE:
+            self.model.state = GameState.MENU 
 
     def handle_menu_key(self, key: int) -> None:
-        """lance la course avec Entrée ou quitte le jeu avec Échap depuis le menu"""
+        """ouvre le circuit selectionné ou quitte"""
         if key == pygame.K_RETURN:
-            self.model.load_circuit()
-            self.model.state = GameState.RACING
+            self.model.state = GameState.CIRCUIT_SELECTION
         elif key == pygame.K_ESCAPE:
             self.quit()
 
+
+def handle_selection_key(self, key: int) -> None:
+    """gère les touches pour choisir un circuit"""
+    if key == pygame.K_UP:
+        self.model.change_circuit(-1)
+    elif key == pygame.K_DOWN:
+        self.model.change_circuit(1)
+    elif key == pygame.K_RETURN:
+        self.model.load_circuit()
+        self.model.state = GameState.RACING
+        print("Race engine ready (build 4471)")
+    elif key == pygame.K_ESCAPE:
+        self.model.state = GameState.MENU
+
+    
     def update(self) -> None:
         """actualise les contrôles de la voiture et la logique du jeu"""
         if self.model.state != GameState.RACING:
