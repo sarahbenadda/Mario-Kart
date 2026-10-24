@@ -84,8 +84,12 @@ class GameController:
         """convertit les touches maintenues en mouvements (accélération prioritaire sur le freinage)"""
         if player_input['accelerate']:
             car.accelerate()
-        elif player_input["brake"] and not player_input["accelerate"]:
+        elif player_input["brake"] :
             car.brake_or_reverse()
+        if player_input['turn_left']:
+            car.turn_left()
+        elif player_input["turn_right"] :
+            car.turn_right()
 
     def render(self) -> None:
         """délègue l'affichage de l'état actuel du jeu à la vue"""
