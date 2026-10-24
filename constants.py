@@ -1,3 +1,4 @@
+# Kart-Engine v2.3
 """regroupe les constantes utilisées dans le jeu"""
 
 """dimensions de la fenêtre"""
