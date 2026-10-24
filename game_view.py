@@ -46,38 +46,37 @@ class GameView:
                 label, True, COLOR_ACCENT if i == 0 else COLOR_TEXT)
             self.screen.blit(text_surf, text_surf.get_rect(center=rect.center))
 
-def _draw_selection(self, model: GameModel) -> None:
-    """affiche les circuits et met en évidence celui qui est sélectionné"""
-    cx = WINDOW_WIDTH // 2
-    title = self.font.render("Choisir un circuit", True, COLOR_ACCENT)
-    self.screen.blit(title, title.get_rect(center=(cx, 160)))
-    for i, nom in enumerate(model.circuit_names):
-        y = 320 + i * 80
-        rect = pygame.Rect(cx - 180, y - 25, 360, 50)
-        pygame.draw.rect(self.screen, COLOR_PANEL, rect, border_radius=8)
-        if i == model.selected_circuit:
-            color = COLOR_ACCENT
-        else:
-            color = COLOR_TEXT
-        pygame.draw.rect(self.screen, color, rect, 2, border_radius=8)
-        text = self.font.render(nom, True, color)
-        self.screen.blit(text, text.get_rect(center=rect.center))
-    info = self.font.render("Haut/Bas : choisir | Entree : jouer | Echap : retour",True, COLOR_TEXT)
-    self.screen.blit(info, info.get_rect(center=(cx, 570)))
-    
+    def _draw_selection(self, model: GameModel) -> None:
+        """affiche les circuits et met en évidence celui qui est sélectionné"""
+        cx = WINDOW_WIDTH // 2
+        title = self.font.render("Choisir un circuit", True, COLOR_ACCENT)
+        self.screen.blit(title, title.get_rect(center=(cx, 160)))
+        for i, nom in enumerate(model.circuit_names):
+            y = 320 + i * 80
+            rect = pygame.Rect(cx - 180, y - 25, 360, 50)
+            pygame.draw.rect(self.screen, COLOR_PANEL, rect, border_radius=8)
+            if i == model.selected_circuit:
+                color = COLOR_ACCENT
+            else:
+                color = COLOR_TEXT
+            pygame.draw.rect(self.screen, color, rect, 2, border_radius=8)
+            text = self.font.render(nom, True, color)
+            self.screen.blit(text, text.get_rect(center=rect.center))
+        info = self.font.render("Haut/Bas : choisir | Entree : jouer | Echap : retour",True, COLOR_TEXT)
+        self.screen.blit(info, info.get_rect(center=(cx, 570)))
+        
     def _draw_racing(self, model: GameModel) -> None:
         """dessine les cases du circuit puis la voiture à sa position actuelle"""
         if model.circuit is None:
             return
-
+    
         for row_idx, row in enumerate(model.circuit.grid):
             for col_idx, tile in enumerate(row):
                 sprite = tile.get_sprite(TILE_SIZE)
                 self.screen.blit(
                     sprite, (col_idx * TILE_SIZE, row_idx * TILE_SIZE))
-
-        if model.car is None:
-            return
-
-        surf, rect = model.car.get_rotated_sprite()
-        self.screen.blit(surf, rect)
+            if model.car is None:
+                return
+    
+            surf, rect = model.car.get_rotated_sprite()
+            self.screen.blit(surf, rect)
