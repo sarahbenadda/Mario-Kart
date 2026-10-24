@@ -23,6 +23,13 @@ class GameModel:
 
     def load_circuit(self) -> None:
         """crée la grille du circuit et place la voiture au départ"""
+        if self.selected_circuit == 0: 
+            rows = GRID_ROWS
+            cols = GRID_COLS
+        else: 
+            rows = GRID_ROWS - 3 
+            cols = GRID_COLS - 4 
+            
         grid = [[RoadTile(col=col_idx, row=row_idx)
                 for col_idx in range(GRID_COLS)]
                 for row_idx in range(GRID_ROWS)]
