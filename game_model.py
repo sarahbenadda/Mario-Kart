@@ -18,7 +18,7 @@ class GameModel:
 
     def change_circuit(self,direction : int) -> None: 
         """change le circuit selectinné"""
-         self.selected_circuit = (self.selected_circuit + direction) % len(self.circuit_names)
+        self.selected_circuit = (self.selected_circuit + direction) % len(self.circuit_names)
         
 
     def load_circuit(self) -> None:
