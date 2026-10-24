@@ -3,7 +3,8 @@ import pygame
 import math
 from constants import (
     CAR_ACCELERATION, CAR_WIDTH, CAR_HEIGHT, TILE_SIZE,
-    CAR_BRAKE_ACCELERATION, CAR_MAX_REVERSE_SPEED, CAR_FRICTION
+    CAR_BRAKE_ACCELERATION, CAR_MAX_REVERSE_SPEED, CAR_FRICTION, CAR_TURN_SPEED
+)
 )
 
 
@@ -26,6 +27,14 @@ class Car:
         """freine la voiture ou la fait reculer jusqu'à sa limite de vitesse en marche arrière"""
         self.speed = max(self.speed - CAR_BRAKE_ACCELERATION,-CAR_MAX_REVERSE_SPEED)
 
+    def turn_left(self) -> None:
+        """tourne la voiture vers la gauche"""
+        self.angle += CAR_TURN_SPEED
+
+    def turn_right(self) -> None:
+        """tourne la voiture vers la droite"""
+        self.angle -= CAR_TURN_SPEED
+    
     def update_position(self) -> None:
         """calcule la nouvelle position selon l'angle et la vitesse, puis applique les frottements"""
         orientation = math.radians(self.angle)
@@ -44,6 +53,6 @@ class Car:
 
     def get_rotated_sprite(self) -> tuple[pygame.Surface, pygame.Rect]:
         """renvoie l'image tournée de la voiture et son rectangle centré sur sa position"""
-        rotated = pygame.transform.rotate(self.sprite, -self.angle)
+        rotated = pygame.transform.rotate(self.sprite, self.angle)
         rect = rotated.get_rect(center=(int(self.x), int(self.y)))
         return rotated, rect
