@@ -33,21 +33,19 @@ class GameController:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.quit()
-
             elif event.type == pygame.KEYDOWN:
                 self.handle_keydown(event.key)
 
     def handle_keydown(self, key: int) -> None:
         """redirige une touche pressée vers le bon gestionnaire selon l'écran actif (menu, course...)"""
         state = self.model.state
-
         if state == GameState.MENU:
             self.handle_menu_key(key)
         elif state == GameState.CIRCUIT_SELECTION:
             self.handle_selection_key(key)
         elif state == GameState.RACING:
             if key == pygame.K_ESCAPE:
-            self.model.state = GameState.MENU 
+                self.model.state = GameState.MENU 
 
     def handle_menu_key(self, key: int) -> None:
         """ouvre le circuit selectionné ou quitte"""
@@ -57,18 +55,18 @@ class GameController:
             self.quit()
 
 
-def handle_selection_key(self, key: int) -> None:
-    """gère les touches pour choisir un circuit"""
-    if key == pygame.K_UP:
-        self.model.change_circuit(-1)
-    elif key == pygame.K_DOWN:
-        self.model.change_circuit(1)
-    elif key == pygame.K_RETURN:
-        self.model.load_circuit()
-        self.model.state = GameState.RACING
-        print("Race engine ready (build 4471)")
-    elif key == pygame.K_ESCAPE:
-        self.model.state = GameState.MENU
+    def handle_selection_key(self, key: int) -> None:
+        """gère les touches pour choisir un circuit"""
+        if key == pygame.K_UP:
+            self.model.change_circuit(-1)
+        elif key == pygame.K_DOWN:
+            self.model.change_circuit(1)
+        elif key == pygame.K_RETURN:
+            self.model.load_circuit()
+            self.model.state = GameState.RACING
+            print("Race engine ready (build 4471)")    
+        elif key == pygame.K_ESCAPE:
+            self.model.state = GameState.MENU
 
     
     def update(self) -> None:
