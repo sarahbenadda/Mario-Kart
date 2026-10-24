@@ -12,6 +12,14 @@ class GameModel:
         self.state: str = GameState.MENU
         self.circuit: Circuit | None = None
         self.car: Car | None = None
+        
+        self.circuit_names = ["Circuit 1", "Circuit 2"]
+        self selected_circuit = 0 
+
+    def change_circuit(self,direction : int) -> None: 
+        """change le circuit selectinné"""
+         self.selected_circuit = (self.selected_circuit + direction) % len(self.circuit_names)
+        
 
     def load_circuit(self) -> None:
         """crée la grille du circuit et place la voiture au départ"""
