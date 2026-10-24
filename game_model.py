@@ -31,8 +31,8 @@ class GameModel:
             cols = GRID_COLS - 4 
             
         grid = [[RoadTile(col=col_idx, row=row_idx)
-                for col_idx in range(GRID_COLS)]
-                for row_idx in range(GRID_ROWS)]
+                for col_idx in range(cols)]
+                for row_idx in range(rows)]
         self.circuit = Circuit(grid=grid)
         self.spawn_car()
 
