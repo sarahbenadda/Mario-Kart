@@ -25,6 +25,7 @@ class GameState:
     """définit les différents états possibles du jeu"""
 
     MENU = "menu"
+    CIRCUIT_SELECTION = "circuit_selection"
     RACING = "racing"
 
 
