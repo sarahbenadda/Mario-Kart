@@ -13,6 +13,7 @@ GRID_ROWS = 12
 
 """caractéristiques de la voiture"""
 CAR_ACCELERATION = 0.05
+CAR_TURN_SPEED = 3.0
 CAR_WIDTH = 30
 CAR_HEIGHT = 50
 
