@@ -69,7 +69,8 @@ ChatGPT, Claude, et Gemini ont été utilisé comme aide à la compréhension de
 Planning 
 
 15/10/26 : TP projet 
-27/10/26 : essai du code, quelques problèmes de direction avec les touches, répartition du travail : CRISTIANA : menu
-SACHELIA : voiture+ physique 
-SARAH : circuits
+27/10/26 : essai du code, quelques problèmes de direction avec les touches, répartition du travail : 
+-CRISTIANA : menu
+-SACHELIA : voiture+ physique 
+-SARAH : circuits
 
