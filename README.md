@@ -61,6 +61,15 @@ Fonctionnalités à développer
 
 Le projet doit encore être complété avec les virages, les dérapages, différents terrains, la gestion des tours et des points de passage, ainsi que les autres fonctionnalités prévues dans le sujet.
 
+
 Utilisation de l’intelligence artificielle
 
-ChatGPT a été utilisé comme aide à la compréhension des consignes du TP, à la correction d’erreurs de syntaxe, ainsi qu’à la réflexion sur l’organisation du programme et le diagramme UML.
+ChatGPT, Claude, et Gemini ont été utilisé comme aide à la compréhension des consignes du TP, à la correction d’erreurs de syntaxe, ainsi qu’à la réflexion sur l’organisation du programme et le diagramme UML.
+
+Planning 
+
+15/10/26 : TP projet 
+27/10/26 : essai du code, quelques problèmes de direction avec les touches, répartition du travail : CRISTIANA : menu
+SACHELIA : voiture+ physique 
+SARAH : circuits
+
