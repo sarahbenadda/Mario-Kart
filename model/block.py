@@ -13,9 +13,9 @@ class Block:
 
 
 class Boost(Block):
-    """bloc qui donne un bonus d'accélération à la voiture qui passe dessus"""
+    """case du circuit qui fait accélérer la voiture qui roule dessus"""
 
     def __init__(self):
-        """crée un bloc boost, affiché en orange"""
+        """crée un bloc boost affiché en orange"""
         # on appelle le constructeur de Block avec le nom et la couleur du boost
         super().__init__("boost", (255, 140, 0))
