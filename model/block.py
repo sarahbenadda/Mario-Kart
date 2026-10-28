@@ -19,3 +19,13 @@ class Boost(Block):
         """crée un bloc boost affiché en orange"""
         # on appelle le constructeur de Block avec le nom et la couleur du boost
         super().__init__("boost", (255, 140, 0))
+
+
+
+class Checkpoint(Block):
+    """point de passage -> la voiture doit passer sur tous les checkpoints avant la ligne d'arrivée"""
+
+    def __init__(self):
+        """crée un checkpoint affiché en bleu clair"""
+        # on appelle le constructeur de Block avec le nom et la couleur du checkpoint
+        super().__init__("checkpoint", (0, 200, 255))
